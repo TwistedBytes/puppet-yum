@@ -85,6 +85,9 @@ class yum::params  {
   $puppi_helper = 'standard'
   $debug = false
   $audit_only = false
-  $priorities_plugin = true
+  $priorities_plugin = $::operatingsystemrelease ? {
+    /^8.*/ => false,
+    default => true,
+  }
 
 }
