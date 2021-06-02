@@ -21,6 +21,7 @@ define yum::managed_yumrepo (
   $sslclientcert   = 'absent',
   $sslclientkey    = 'absent',
   $sslverify       = 'absent',
+  $module_hotfixes = 'absent',
   ) {
 
   # ensure that everything is setup
@@ -81,6 +82,7 @@ define yum::managed_yumrepo (
       sslclientcert   => $sslclientcert,
       sslclientkey    => $sslclientkey,
       sslverify       => $sslverify,
+      module_hotfixes => $module_hotfixes,
     }
 
     if $autokeyimport == 'yes' and $gpgkey != '' {
