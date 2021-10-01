@@ -27,27 +27,27 @@ class yum::repo::centos6 (
 
   $baseurl_base = $mirror_url ? {
     undef   => undef,
-    default => "${mirror_url}/\$releasever/os/\$basearch/",
+    default => "${mirror_url}/6.10/os/\$basearch/",
   }
 
   $baseurl_updates = $mirror_url ? {
     undef   => undef,
-    default => "${mirror_url}/\$releasever/updates/\$basearch/",
+    default => "${mirror_url}/6.10/updates/\$basearch/",
   }
 
   $baseurl_extras = $mirror_url ? {
     undef   => undef,
-    default => "${mirror_url}/\$releasever/extras/\$basearch/",
+    default => "${mirror_url}/6.10/extras/\$basearch/",
   }
 
   $baseurl_centosplus = $mirror_url ? {
     undef   => undef,
-    default => "${mirror_url}/\$releasever/centosplus/\$basearch/",
+    default => "${mirror_url}/6.10/centosplus/\$basearch/",
   }
 
   $baseurl_contrib = $mirror_url ? {
     undef   => undef,
-    default => "${mirror_url}/\$releasever/contrib/\$basearch/",
+    default => "${mirror_url}/6.10/contrib/\$basearch/",
   }
 
   yum::managed_yumrepo { 'base':
