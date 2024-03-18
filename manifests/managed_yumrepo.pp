@@ -21,6 +21,7 @@ define yum::managed_yumrepo (
   $sslclientcert   = 'absent',
   $sslclientkey    = 'absent',
   $sslverify       = 'absent',
+  $repo_gpgcheck   = 'absent',
   $module_hotfixes = 'absent',
   ) {
 
@@ -82,6 +83,7 @@ define yum::managed_yumrepo (
       sslclientcert   => $sslclientcert,
       sslclientkey    => $sslclientkey,
       sslverify       => $sslverify,
+      repo_gpgcheck   => $repo_gpgcheck,
       module_hotfixes => $module_hotfixes,
     }
 
