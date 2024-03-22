@@ -10,7 +10,8 @@ class yum::repo::remi_test {
 
   yum::managed_yumrepo { 'remi-test':
     descr      => 'Remi\'s test RPM repository for Enterprise Linux $releasever - $basearch',
-    mirrorlist => "http://rpms.remirepo.net/enterprise/${releasever}/test/mirror",
+    # mirrorlist => "http://rpms.remirepo.net/enterprise/${releasever}/test/mirror",
+    mirrorlist => "http://cdn.remirepo.net/enterprise/${releasever}/test/\$basearch/mirror",
     enabled    => 1,
     gpgcheck   => 1,
     gpgkey     => 'http://rpms.remirepo.net/RPM-GPG-KEY-remi',

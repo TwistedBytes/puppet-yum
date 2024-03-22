@@ -10,7 +10,8 @@ class yum::repo::remi_safe {
 
   yum::managed_yumrepo { 'remi-safe':
     descr      => 'Safe Remi\'s RPM repository for Enterprise Linux $releasever - $basearch',
-    mirrorlist => "http://rpms.remirepo.net/enterprise/${releasever}/safe/mirror",
+    # mirrorlist => "http://rpms.remirepo.net/enterprise/${releasever}/safe/mirror",
+    mirrorlist => "http://cdn.remirepo.net/enterprise/${releasever}/safe/\$basearch/mirror",
     enabled    => 1,
     gpgcheck   => 1,
     gpgkey     => 'http://rpms.remirepo.net/RPM-GPG-KEY-remi',
