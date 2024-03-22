@@ -20,7 +20,8 @@ class yum::repo::remi {
 
   yum::managed_yumrepo { 'remi':
     descr      => "Remi's RPM repository for ${osname} \$releasever - \$basearch",
-    mirrorlist => "http://rpms.remirepo.net/${os}/${releasever}/remi/mirror",
+    # mirrorlist => "http://rpms.remirepo.net/${os}/${releasever}/remi/mirror",
+    mirrorlist => "http://cdn.remirepo.net/${os}/${releasever}/remi/\$basearch/mirror",
     enabled    => 1,
     gpgcheck   => 1,
     gpgkey     => 'http://rpms.remirepo.net/RPM-GPG-KEY-remi',
